@@ -44,7 +44,8 @@ class Grid:
 
 
     def make_walls(self):
-        """Skapa väggar runt hela spelplanen"""
+        """Skapa väggar runt hela spelplanen och inre väggar"""
+        # ytterväggar
         for i in range(self.height):
             self.set(0, i, self.wall)
             self.set(self.width - 1, i, self.wall)
@@ -52,6 +53,22 @@ class Grid:
         for j in range(1, self.width - 1):
             self.set(j, 0, self.wall)
             self.set(j, self.height - 1, self.wall)
+
+        # inre väggar (skapade med for-loopar)
+        # horisontell vägg med en öppning vid x=10
+        for x in range(5, 15):
+            if x != 10:
+                self.set(x, 4, self.wall)
+
+        # vertikal vägg på höger sida, öppning vid y=5
+        for y in range(2, 8):
+            if y != 5:
+                self.set(25, y, self.wall)
+
+        # kort horisontell vägg i nedre delen, öppning vid x=18
+        for x in range(14, 22):
+            if x != 18:
+                self.set(x, 9, self.wall)
 
 
     # Används i filen pickups.py

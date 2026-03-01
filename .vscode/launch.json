@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Starta spelet",
+            "type": "python",
+            "request": "launch",
+            "module": "src.game",
+            "console": "integratedTerminal"
+        }
+    ]
+}
